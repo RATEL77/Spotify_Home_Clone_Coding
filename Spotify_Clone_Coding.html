@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 메타 정보 및 CSS 포함 -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <!-- FontAwesome 아이콘 사용을 위한 스크립트 -->
+    <script
+      src="https://kit.fontawesome.com/dab690a483.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- CSS 코드 시작 -->
+    <style>
+      /* 전역 스타일 */
+      body {
+        margin: 0px;
+        font-family: spotify-circular, Helvetica, Arial, sans-serif;
+        color: white;
+      }
+
+      /* 링크 스타일 */
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      /* 링크 호버 효과 */
+      a:hover {
+        color: #1ed760;
+      }
+
+      /* 네비게이션 스타일 */
+      nav {
+        height: 80px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      /* 네비게이션 항목 스타일 */
+      .nav-item {
+        padding: 28px 17px;
+        font-weight: 700;
+      }
+
+      /* 메인 콘텐츠 스타일 */
+      main {
+        height: 968px;
+        background-color: rgb(41, 65, 171);
+        background-image: url(https://www-growth.scdn.co/static/home/bursts.svg);
+        background-size: 175%;
+        background-position: 46% 4%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* 메인 헤드라인 스타일 */
+      .headline {
+        font-size: 146px;
+        line-height: 166px;
+        color: #1ed760;
+        font-weight: 900;
+        position: relative;
+        left: 225px;
+        padding-bottom: 40px;
+      }
+
+      /* 헤드라인 첫 번째 줄 스타일 */
+      .headline-first {
+        position: relative;
+        left: -2.5em;
+      }
+
+      /* 서브 헤드라인 스타일 */
+      .sub-headline {
+        color: #1ed760;
+        font-size: 18px;
+        line-height: 24px;
+        padding-bottom: 40px;
+        text-align: center;
+      }
+
+      /* 버튼 영역 스타일 */
+      .button-area {
+        text-align: center;
+      }
+
+      /* 버튼 스타일 */
+      .button-style {
+        padding: 14px 32px;
+        background-color: #1ed760;
+        border-radius: 500px;
+        font-size: inherit;
+        color: #2941ab;
+        font-weight: 700;
+        border: none;
+      }
+
+      /* 버튼 호버 효과 */
+      .button-style:hover {
+        transform: scale(1.07);
+        background-color: #2de26d;
+      }
+
+      /* 푸터 스타일 */
+      footer {
+        height: 530px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* 푸터 내 컨테이너 스타일 */
+      .container {
+        max-width: 1170px;
+        width: 100%;
+        padding-top: 80px;
+        padding-bottom: 50px;
+      }
+
+      /* 푸터 메뉴 스타일 */
+      .footer-menu {
+        display: flex;
+        justify-content: space-between;
+        height: 346px;
+      }
+
+      /* 첫 번째 박스 스타일 */
+      .first-box {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      /* 두 번째 박스 스타일 */
+      .second-box {
+        width: 40%;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      /* 푸터 메뉴 항목 스타일 */
+      .footer-menu-item {
+        padding-bottom: 15px;
+        padding-top: 3px;
+        font-size: 16px;
+      }
+
+      /* 컬럼 스타일 */
+      .column {
+        display: flex;
+        flex-direction: column;
+        padding: 0 15px;
+      }
+
+      /* 서브 타이틀 스타일 */
+      .sub-title {
+        color: #919496;
+        font-weight: 900;
+        margin: 20px 0px;
+      }
+
+      /* 아이콘 박스 스타일 */
+      .icon-box {
+        width: 54px;
+        height: 54px;
+        background-color: #222322;
+        border-radius: 50%;
+        margin-right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 아이콘 스타일 */
+      .icon {
+        font-size: 24px;
+      }
+
+      /* 아이콘 호버 효과 */
+      .icon:hover {
+        color: #2de26d;
+      }
+
+      /* 첫 번째 줄 스타일 */
+      .first-line {
+        color: #919496;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+      }
+
+      /* 두 번째 줄 스타일 */
+      .second-line {
+        color: #919496;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+      }
+
+      /* 두 번째 줄 항목 스타일 */
+      .second-line-item {
+        margin-right: 24px;
+        color: #919496;
+      }
+      /* CSS 코드 끝 */
+    </style>
+    <!-- CSS 코드 종료 -->
+  </head>
+  <body>
+    <!-- HTML 내용 시작 -->
+    <!-- 네비게이션 바 시작 -->
+    <nav>
+      <div>
+        <img
+          src="https://noona-spotify.netlify.app/image/logo.png"
+          width="132"
+        />
+      </div>
+      <div>
+        <a href="#" class="nav-item">Premium</a>
+        <a href="#" class="nav-item">Support</a>
+        <a href="#" class="nav-item">Download</a>
+        <span class="nav-item">|</span>
+        <a href="#" class="nav-item">Sign up</a>
+        <a href="#" class="nav-item">Log in</a>
+      </div>
+    </nav>
+    <!-- 네비게이션 바 종료 -->
+
+    <!-- 메인 컨텐츠 시작 -->
+    <main>
+      <div class="main-container">
+        <div class="headline">
+          <div class="headline-first">Listening is</div>
+          <div>everything</div>
+        </div>
+        <div class="sub-headline">
+          Millions of songs and podcasts. No credit card needed.
+        </div>
+        <div class="button-area">
+          <button class="button-style">Get Spotify free</button>
+        </div>
+      </div>
+    </main>
+    <!-- 메인 컨텐츠 종료 -->
+
+    <!-- 푸터 시작 -->
+    <footer>
+      <div class="container">
+        <div class="footer-menu">
+          <div class="first-box">
+            <div>
+              <img
+                src="https://noona-spotify.netlify.app/image/logo.png"
+                width="132"
+              />
+            </div>
+            <div class="column">
+              <div class="sub-title">COMPANY</div>
+              <a href="#" class="footer-menu-item">About</a>
+              <a href="#" class="footer-menu-item">Jobs</a>
+              <a href="#" class="footer-menu-item">For the Record</a>
+            </div>
+            <div class="column">
+              <div class="sub-title">COMMUNITIES</div>
+              <a href="#" class="footer-menu-item">For Artists</a>
+              <a href="#" class="footer-menu-item">Developers</a>
+              <a href="#" class="footer-menu-item">Advertising</a>
+              <a href="#" class="footer-menu-item">Investors</a>
+              <a href="#" class="footer-menu-item">Vendors</a>
+            </div>
+            <div class="column">
+              <div class="sub-title">USEFUL LINKS</div>
+              <a href="#" class="footer-menu-item">Support</a>
+              <a href="#" class="footer-menu-item">Web Player</a>
+              <a href="#" class="footer-menu-item">Free Mobile App</a>
+            </div>
+          </div>
+          <div class="second-box">
+            <div class="icon-box">
+              <i class="fab fa-instagram icon"></i>
+            </div>
+            <div class="icon-box">
+              <i class="fab fa-twitter icon"></i>
+            </div>
+            <div class="icon-box">
+              <i class="fab fa-facebook-f icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="first-line"><i class="fas fa-globe-africa"></i> USA</div>
+        <div class="second-line">
+          <div>
+            <a href="#" class="second-line-item">Legal</a>
+            <a href="#" class="second-line-item">Privacy Center</a>
+            <a href="#" class="second-line-item">Privacy Policy</a>
+            <a href="#" class="second-line-item">Cookies</a>
+            <a href="#" class="second-line-item">About Ads</a>
+            <a href="#" class="second-line-item"
+              >Additional CA Privacy Disclosures</a
+            >
+          </div>
+          <div>&copy; 2021 Spotify AB</div>
+        </div>
+      </div>
+    </footer>
+    <!-- 푸터 종료 -->
+    <!-- HTML 내용 끝 -->
+  </body>
+</html>
